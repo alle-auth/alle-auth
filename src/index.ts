@@ -5,8 +5,8 @@ import compression from "compression";
 import bodyParser from "body-parser";
 import cors from "cors";
 import routes from "./routes/index";
-
 import { getEnvironment } from "./config/environment";
+import { exec } from "child_process";
 
 const app = express();
 app.use(compression());
@@ -34,6 +34,8 @@ mongoose
   } as mongoose.ConnectOptions)
   .then(() => {
     console.log("Connected to the database successfully");
+    const command = process.platform === "win32" ? "start" : process.platform === "darwin" ? "open" : "xdg-open";
+    exec(`${command} http://localhost:${getEnvironment().PORT}`);
   })
   .catch((error) => console.error("Could not connect to the database", error));
 

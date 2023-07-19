@@ -6,7 +6,7 @@
   "module": "modulejs",
   "scripts": {
     "build": "tsc",
-    "start-build": "node dist/index.js",
+    "start-server": "node dist/index.js",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "prod": "nodemon index.js",
@@ -29,6 +29,7 @@
     "@types/memory-cache": "^0.2.3",
     "@types/morgan": "^1.9.4",
     "@types/react": "^18.2.14",
+    "better-opn": "^3.0.2",
     "body-parser": "^1.20.2",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
@@ -40,8 +41,13 @@
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^1.14.9",
+    "open": "^9.1.0",
     "pusher": "^5.1.2",
     "resend": "^0.15.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.3"
+  },
+  "devDependencies": {
+    "@types/opn": "^5.5.0"
   }
 }
